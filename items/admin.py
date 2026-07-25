@@ -24,6 +24,12 @@ class ItemAdmin(admin.ModelAdmin):
         "admin/items/item/change_list.html"
     )
 
+    class Media:
+        js = (
+            "items/js/notifications.js",
+        )
+    
+
     list_display_links = (
         "name",
     )
@@ -143,33 +149,3 @@ class ItemAdmin(admin.ModelAdmin):
 
         return response
 
-    # def has_export_csv_permission(
-    #     self,
-    #     request: HttpRequest,
-    # ) -> bool:
-    #     opts = self.model._meta
-    #     codename = get_permission_codename(
-    #         "export_items_csv",
-    #         opts,
-    #     )
-
-    #     return request.user.has_perm(
-    #         f"{opts.app_label}.{codename}"
-    #     )
-
-    # def changelist_view(
-    #     self,
-    #     request: HttpRequest,
-    #     extra_context=None,
-    # ):
-    #     if extra_context is None:
-    #         extra_context = {}
-
-    #     extra_context["has_export_csv_permission"] = (
-    #         self.has_export_csv_permission(request)
-    #     )
-
-    #     return super().changelist_view(
-    #         request,
-    #         extra_context=extra_context,
-    #     )
