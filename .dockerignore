@@ -1,17 +1,29 @@
 .git
+.gitignore
+.github
+
 .venv
-.idea
-.vscode
+venv
+env
 
 __pycache__
-*.pyc
+*.py[cod]
+
+.pytest_cache
+.mypy_cache
+.ruff_cache
+
+*.sqlite3
+db.sqlite3
 
 .env
+.env.*
 
 staticfiles
 
-media
+.idea
+.vscode
 
-.pytest_cache
-
-.mypy_cache
+*.log
+.DS_Store
+Thumbs.db
