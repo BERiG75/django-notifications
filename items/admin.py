@@ -23,6 +23,11 @@ class ItemAdmin(admin.ModelAdmin):
         "owner",
     )
 
+    list_filter = (
+        "owner",
+        "name",
+    )
+    
     ordering = (
         "-created_at",
         "-id",
