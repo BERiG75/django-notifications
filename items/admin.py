@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.db.models import QuerySet
 from django.http import HttpRequest
 
+from .filters import NameFilter, UsernameFilter
 from .models import Item
 
 
@@ -26,6 +27,8 @@ class ItemAdmin(admin.ModelAdmin):
     list_filter = (
         "owner",
         "name",
+        UsernameFilter,
+        NameFilter,
     )
     
     ordering = (
